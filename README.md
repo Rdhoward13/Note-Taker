@@ -11,4 +11,4 @@ Express needs to be installed before use.
 [git hub]: https://github.com/Rdhoward13/note-taker
 [Heroku]: https://note-taker231.herokuapp.com/
 
-<img src = "./screenshot.png">
+# <img src = "./screenshot.png" alt="screenshot of app">
