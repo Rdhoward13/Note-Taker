@@ -34,25 +34,39 @@ app.get("/api/notes", (req, res) => {
 
 //POST Route for creating note
 app.post("/api/notes", (req, res) => {
-  const { title, text } = req.body;
-  var noteId = notes.length + 1;
-  if (text && title) {
-    const newNote = {
-      id: noteId,
-      title,
-      text,
-    };
-    notes.push(newNote);
-    const jsonNote = JSON.stringify(newNote);
-    res.json(notes);
-    fs.writeFile("./db/db.json", jsonNote, (err) => {
-      if (err) {
-        console.log(err);
-      }
-      console.log("POST METHOD WORKING");
-    });
-  }
+  const newNote = createNote(req.body, notes);
+  res.json(newNote);
+  // const { title, text } = req.body;
+  // var noteId = notes.length + 1;
+  // if (text && title) {
+  //   const newNote = {
+  //     id: noteId,
+  //     title,
+  //     text,
+  //   };
+  //   //function is not working on local host
+  //   notes.push(newNote);
+  //   const jsonNote = JSON.stringify(newNote);
+  //   res.json(notes);
+  //   fs.writeFile("./db/db.json", jsonNote, (err) => {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //     console.log("POST METHOD WORKING");
+  //   });
+  // }
 });
+
+const createNote = (body, notesArray) => {
+  const newNote = body;
+  body.id = notesArray.length + 1;
+  notesArray.push(newNote);
+  fs.writeFileSync(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(notesArray, 2)
+  );
+  return newNote;
+};
 
 // DELETE Route for notes
 app.delete("/api/notes/:id", (req, res) => {
