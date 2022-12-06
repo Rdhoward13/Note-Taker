@@ -1,11 +1,8 @@
-USER STORY
-A small business owner wants to be able to take notes on task throughout the day.
+## Note-Taker
 
-Built with:
-Javascript, NodeJS, express
+## Description
 
-Installation:
-Express needs to be installed before use.
+This is an app created to take notes throughout the day for an owner. They are able to save and delete notes depending on their situation. It was used with javascript, nodeJs, and express.
 
 ##Screenshots and Links
 [git hub]: https://github.com/Rdhoward13/note-taker
