@@ -6,6 +6,6 @@ This is an app created to take notes throughout the day for an owner. They are a
 
 ##Screenshots and Links
 [git hub]: https://github.com/Rdhoward13/note-taker
-[Heroku]: https://note-taker231.herokuapp.com/
+[Heroku]: https://note-take5566.herokuapp.com/
 
 # <img src = "./screenshot.png" alt="screenshot of app">
